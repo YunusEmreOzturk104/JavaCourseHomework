@@ -11,12 +11,13 @@ public class Main {
 		CourseManager courseManager = new CourseManager();
 		courseManager.courseTaken(course1);
 		courseManager.courseTaken(course2);
-		Instructor instructor1 = new Instructor(1, "Engin Demiroğ");
-		Instructor[] instructors = {instructor1};
-		for (Instructor instructor : instructors) {
-			System.out.println( "Eğitmen: "+ instructor.id +" "+ instructor.name);
-		}
-		
+		User ınstUser = new Instructor(1, "Engin", "Demiroğ", 4000, "Yazılım geliştiricisi");
+		UserManager userManager = new InstructorManager();
+		userManager.add(ınstUser);
+		userManager.deleted(ınstUser);
+		User stUser = new Student(1, "Yunus Emre", "Öztürk", 49, 90);
+		UserManager usManager = new StudentManager();
+		usManager.add(stUser);
+		usManager.deleted(stUser);
 	}
-
 }
